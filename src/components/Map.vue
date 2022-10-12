@@ -6,7 +6,6 @@ import mapPlaceHolderImage from '../../resources/map_placeholder.jpg'
 // Props
 const props = defineProps({
   records: Array,
-  catalog: Array,
 })
 
 let map = null

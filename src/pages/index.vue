@@ -9,13 +9,11 @@
 <script setup>
 import dayjs from 'dayjs'
 import meta from '../../resources/owi_juli_2022.json'
-import catalog from '../../resources/charges.json'
 
 const parseRecords = (csv) => {
   let recordId = 0
 
   return csv
-    .split('\n')
     .map(row => {
       const record = row.split(',')
       recordId++
@@ -47,9 +45,10 @@ const format = (number) => {
 let chargesSearch = ref('')
 let records = ref([])
 let offencesByFrequency = ref([])
+let catalog
 
 // Computed
-const offencesByFrequencyFiltered = computed(()=> {
+const offencesByFrequencyFiltered = computed(() => {
   return offencesByFrequency.value.filter((offence) => {
 
   if (chargesSearch.value === '') {
@@ -73,9 +72,26 @@ const offencesByFrequencyFiltered = computed(()=> {
 // Lifecycle
 
 onMounted(async () => {
-  const response = await fetch('owi_juli_2022.csv')
-  const csv = await response.text()
-  
+  const [ catalogData, csv ] = await Promise.all([
+    (() => {
+      return fetch('charges.json')
+        .then(response => response.text())
+        .then(text => JSON.parse(text))
+        .catch(err => {
+          console.error(err)
+        })
+    })(),
+    (() => {
+      return fetch('owi_juli_2022.csv')
+        .then(response => response.text())
+        .then(text => text.split('\n'))
+        .catch(err => {
+          console.error(err)
+        })
+    })(),
+  ])
+
+  catalog = catalogData  
   records.value = parseRecords(csv)
 
   const groupedCharges = records.value
@@ -168,7 +184,7 @@ onMounted(async () => {
       </div>
     </section>
 
-    <Map class="py-20 p-12 max-w-7xl mx-auto" :records="records" :catalog="catalog" />
+    <Map class="py-20 p-12 max-w-7xl mx-auto" :records="records" />
 
     <section class="py-16 px-8 bg-gray-300">
       <div class="max-w-3xl mx-auto">
