@@ -197,15 +197,15 @@ function resetFilter() {
 
 <template>
   <section>
-    <div class="flex justify-between mb-8">
-      <h2 class="text-3xl font-bold">Alle Ordnungswidrigkeiten</h2>
+    <div class="md:flex justify-between mb-8">
+      <h2 class="text-3xl font-bold mb-4">Alle Ordnungs&shy;widrigkeiten</h2>
       <div class="flex">
         <button @click="filter = FILTER.LOCATION;resetFilter()" :disabled="!showMap" class="mr-4" :class="locationButtonClass">nach Ort</button>
         <button @click="filter = FILTER.CHARGE;resetFilter()" :disabled="!showMap" :class="chargeButtonClass">nach Tatbestand</button>
       </div>
     </div>
-    <div class="grid grid-cols-[70%_30%] h-[70vh] overflow-hidden bg-gray-50 rounded-md">
-      <div class="h-[70vh] relative">
+    <div class="grid md:grid-cols-[70%_30%] md:md:h-[70vh] overflow-hidden bg-gray-50 rounded-md">
+      <div class="h-72 md:h-[70vh] relative order-2 md:order-1">
         <div id="map" class="w-full h-full z-0" ref="map"></div>
         <div v-if="!showMap" class="absolute top-0 left-0 right-0 bottom-0 z-10 bg-cover flex place-content-center" :style="`background-image: url(${mapPlaceHolderImage})`">
           <div class="max-w-md text-center place-self-center">
@@ -215,7 +215,7 @@ function resetFilter() {
 
         </div>
       </div>  
-      <div class="h-[70vh]">
+      <div class="h-72 md:h-[70vh] order-1 md:order-2">
         <input
           type="text"
           class="w-full h-14 p-2 border-0 shadow"

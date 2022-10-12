@@ -136,20 +136,20 @@ onMounted(async () => {
 </script>
 
 <template>
-  <header class="min-h-[70vh] py-24 bg-gray-100 text-gray-800">
+  <header class="min-h-[70vh] py-24 px-4 bg-gray-100 text-gray-800">
     <div class="max-w-3xl mx-auto h-full flex items-center">
-      <p class="text-4xl leading-normal">
+      <p class="text-2xl md:text-4xl leading-normal md:leading-normal">
         Im <mark class="mark-yellow font-bold">{{ meta.title }}</mark> hat das Ordnungsamt der Stadt&nbsp;Essen <mark class="mark-yellow font-bold">{{ format(records.length) }}</mark>&nbsp;Verwarnungen im Verkehr ausgesprochen. Das sind rund <mark class="mark-yellow font-bold">{{ Math.ceil(records.length / 31) }}</mark>&nbsp;pro Tag. Wo und wofür könnt ihr auf dieser Seite herausfinden.
       </p>
     </div>
   </header>
 
   <main class="pt-16 bg-gray-100">
-    <section class="bg-gray-800">
-      <div class="relative -top-32 max-w-3xl mx-auto">
-        <header class="mx-auto mb-6 flex justify-between">
-          <h2 class="text-3xl font-bold">Die häufigsten Tatbestände</h2>
-          <input type="text" v-model.trim="chargesSearch" class="inline-block ml-4 w-52 h-10 border-0 shadow" placeholder="Stichwort suchen">
+    <section class="bg-gray-800 px-4">
+      <div class="relative -top-28 md:-top-32 max-w-3xl mx-auto">
+        <header class="mx-auto mb-6 md:flex justify-between">
+          <h2 class="text-2xl md:text-3xl font-bold mb-4 md:mb-0">Die häufigsten Tatbestände</h2>
+          <input type="text" v-model.trim="chargesSearch" class="inline-block mb-4 md:mb-0 md:ml-4 w-52 h-10 border-0 shadow" placeholder="Stichwort suchen">
         </header>
         <table class="block mx-auto mb-4 h-80 overflow-y-scroll text-sm border-2 border-gray-800 bg-white rounded-md">
           <tr v-if="offencesByFrequencyFiltered.length === 0" class="flex p-4">
@@ -184,9 +184,9 @@ onMounted(async () => {
       </div>
     </section>
 
-    <Map class="py-20 p-12 max-w-7xl mx-auto" :records="records" />
+    <Map class="py-20 p-8 max-w-7xl mx-auto" :records="records" />
 
-    <section class="py-16 px-8 bg-gray-300">
+    <section class="py-16 px-4 bg-gray-300">
       <div class="max-w-3xl mx-auto">
         <h2 class="font-bold text-xl mb-2">Datengrundlage</h2>
         <p class="text-lg mb-2">Die zugrundeliegenden Informationen wurden mithilfe der Plattform <a class="border-b-2 border-blue-500 hover:border-blue-200" href="https://fragdenstaat.de" target="_blank">fragdenstaat.de</a> auf Baiss des Informations&shy;freiheits&shy;gesetzes <a href="https://fragdenstaat.de/anfrage/ordnungswidrigkeiten-juli-2022-2/" class="border-b-2 border-blue-500 hover:border-blue-200" target="_blank">beim Ordnungsamt der Stadt Essen angefragt</a>. Die Antwort folgte relativ zügig auf 61 beidseitig, dreispaltig, in kleiner Schrift bedruckten DIN A4 Seiten, die eingescannt und mittels OCR maschinenlesbar gemacht wurden.</p>
@@ -197,7 +197,7 @@ onMounted(async () => {
     </section>
   </main>
 
-  <footer class="max-w-3xl mx-auto py-8 text-sm grid grid-cols-3">
+  <footer class="max-w-3xl mx-auto py-8 px-4 text-sm grid grid-cols-2 md:grid-cols-3">
     <!-- Zugrundeliegende Daten freundlicherweise bereitgestellt durch das <a href="https://fragdenstaat.de/anfrage/ordnungswidrigkeiten-juli-2022-2/" class="border-b-2 border-blue-500 hover:border-blue-200" target="_blank">Ordnungsamt der Stadt Essen</a>.  -->
     <div class="block mb-4">
       <strong class="block mb-1">Problem gefunden?</strong>
@@ -216,13 +216,13 @@ onMounted(async () => {
         <li class="mb-1"><a href="https://github.com/bezin/owi-web" target="_blank">GitHub</a></li>
       </ul>
     </div>
-    <div class="block mb-4">
+    <div class="block mb-4 col-span-2">
       Geodaten von <a href="https://openstreetmap.org" class="border-b-2 border-blue-500 hover:border-blue-200" target="_blank">Open Street Map</a><br>
       Tatbestandskatalog powered by <a href="https://weg.li" class="border-b-2 border-blue-500 hover:border-blue-200" target="_blank">weg.li</a> 
     </div>
   </footer>
 
-  <aside class="py-8 bg-gray-100">
+  <aside class="py-8 px-4 bg-gray-100">
     <div class="max-w-3xl mx-auto text-xs">
       <p class="mb-2"><strong>Impressum</strong> owi.mssll.de ist ein privates Projekt von Benedict Massolle, Brunnenstraße 12, 40223 Düsseldorf. Ich bin auch inhaltlich verantwortlich nach §5 TMG. Ihr könnt mich erreichen unter <a href="mailto:hallo@mssll.de" class="border-b-2 border-blue-500 hover:border-blue-200" target="_blank">hallo@mssll.de</a></p>
       <p><strong>Datenschutzerklärung</strong> Diese Seite erhebt, speichert und verarbeitet keinerlei personenbezogene Daten. Mein Hosting Provider <a href="https://webhostone.de" class="border-b-2 border-blue-500 hover:border-blue-200" target="_blank">Webhost One</a> speichert gemäß seiner gesetzlichen Verpflichtung eure IP-Adresse für sieben Tage.</p>
