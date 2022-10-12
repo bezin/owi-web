@@ -216,9 +216,9 @@ onMounted(async () => {
         <li class="mb-1"><a href="https://github.com/bezin/owi-web" target="_blank">GitHub</a></li>
       </ul>
     </div>
-    <div class="block mb-4 col-span-2">
+    <div class="block mb-4 col-span-2 md:col-auto">
       Geodaten von <a href="https://openstreetmap.org" class="border-b-2 border-blue-500 hover:border-blue-200" target="_blank">Open Street Map</a><br>
-      Tatbestandskatalog powered by <a href="https://weg.li" class="border-b-2 border-blue-500 hover:border-blue-200" target="_blank">weg.li</a> 
+      Tatbestandskatalog von <a href="https://weg.li" class="border-b-2 border-blue-500 hover:border-blue-200" target="_blank">weg.li</a> 
     </div>
   </footer>
 
