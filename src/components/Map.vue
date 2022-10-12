@@ -206,7 +206,7 @@ function resetFilter() {
     </div>
     <div class="grid md:grid-cols-[70%_30%] md:md:h-[70vh] overflow-hidden bg-gray-50 rounded-md">
       <div class="h-72 md:h-[70vh] relative order-2 md:order-1">
-        <div id="map" class="w-full h-full z-0" ref="map"></div>
+        <div id="map" class="w-full h-full z-0"></div>
         <div v-if="!showMap" class="absolute top-0 left-0 right-0 bottom-0 z-10 bg-cover flex place-content-center" :style="`background-image: url(${mapPlaceHolderImage})`">
           <div class="max-w-md text-center place-self-center">
             <p class="text-lg mb-4">Die Karte wird von <mark class="mark-yellow">metropoleruhr.de</mark> geladen. Dabei wird deine IP-Adresse übertragen. Klicke auf „Karte anzeigen“ wenn du damit einverstanden bist.</p>
