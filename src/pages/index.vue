@@ -180,7 +180,7 @@ onMounted(async () => {
             </td>
           </tr>
         </table>
-        <small class="block text-gray-50 text-xs">In der obigen Tabelle sind ähnliche Tatbestände gruppiert: Zu schnelle fahren in einer 30er-Zone ist ein anderer Tatbestand, als zu schnell fahren, wo Tempo 30 angewiesen ist.</small>
+        <small class="block text-gray-50 text-xs">In der obigen Tabelle sind ähnliche Tatbestände gruppiert: Zu schnelles Fahren in einer 30er-Zone ist ein anderer Tatbestand, als zu schnelles Fahren, wo Tempo 30 angewiesen ist.</small>
       </div>
     </section>
 
@@ -189,8 +189,8 @@ onMounted(async () => {
     <section class="py-16 px-4 bg-gray-300">
       <div class="max-w-3xl mx-auto">
         <h2 class="font-bold text-xl mb-2">Datengrundlage</h2>
-        <p class="text-lg mb-2">Die zugrundeliegenden Informationen wurden mithilfe der Plattform <a class="border-b-2 border-blue-500 hover:border-blue-200" href="https://fragdenstaat.de" target="_blank">fragdenstaat.de</a> auf Baiss des Informations&shy;freiheits&shy;gesetzes <a href="https://fragdenstaat.de/anfrage/ordnungswidrigkeiten-juli-2022-2/" class="border-b-2 border-blue-500 hover:border-blue-200" target="_blank">beim Ordnungsamt der Stadt Essen angefragt</a>. Die Antwort folgte relativ zügig auf 61 beidseitig, dreispaltig, in kleiner Schrift bedruckten DIN A4 Seiten, die eingescannt und mittels OCR maschinenlesbar gemacht wurden.</p>
-        <p class="text-lg mb-2">Das so entstandene Zwischenergebnis wurde manuell nachbearbeitet werden, da die OCR Zeichen erkannt hat, die nicht da waren <em>(Merke: vorher die Scanneroberfläche gründlich reinigen)</em> oder seine Schwierigkeiten mit römischen Numeralen hatte <em>(Looking at you, I. bis III. Hagen).</em></p>
+        <p class="text-lg mb-2">Die zugrundeliegenden Informationen wurden mithilfe der Plattform <a class="border-b-2 border-blue-500 hover:border-blue-200" href="https://fragdenstaat.de" target="_blank">fragdenstaat.de</a> auf Basis des Informations&shy;freiheits&shy;gesetzes <a href="https://fragdenstaat.de/anfrage/ordnungswidrigkeiten-juli-2022-2/" class="border-b-2 border-blue-500 hover:border-blue-200" target="_blank">beim Ordnungsamt der Stadt Essen angefragt</a>. Die Antwort erfolgte relativ zügig auf 61 beidseitig, dreispaltig, in kleiner Schrift bedruckten DIN A4 Seiten, die eingescannt und mittels OCR maschinenlesbar gemacht wurden.</p>
+        <p class="text-lg mb-2">Das so entstandene Zwischenergebnis wurde manuell nachbearbeitet, da die OCR Zeichen erkannt hat, die nicht da waren <em>(Merke: vorher die Scanneroberfläche gründlich reinigen)</em> oder seine Schwierigkeiten mit römischen Numeralen hatte <em>(Looking at you, I. bis III. Hagen).</em></p>
         <p class="text-lg mb-2">Sicherlich gibt es kleinere Erkennungsfehler, bei der Menge an Datensätzen ist es aber zu vernachlässigen. In einigen wenige Fällen waren die Ausgangsinformationen auch schon unvollständig (fehlende oder falsche Tatbestandsnr., fehlender Tatort).</p>
         <p class="text-lg">Den finalen Datensatz, auf dem auch diese Seite basiert, könnt ihr <a class="border-b-2 border-blue-500 hover:border-blue-200" href="https://raw.githubusercontent.com/bezin/owi-web/main/public/owi_juli_2022.csv" target="_blank"> auf GitHub herunterladen</a>.</p>
       </div>
