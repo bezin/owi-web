@@ -9,6 +9,7 @@
 <script setup>
 import dayjs from 'dayjs'
 import meta from '../../resources/owi_juli_2022.json'
+import { format } from '../util'
 
 const parseRecords = (csv) => {
   let recordId = 0
@@ -34,12 +35,6 @@ const parseRecords = (csv) => {
 useHead({
   title: `${meta.title} / OWIs in Essen`,
 })
-
-// Helper
-const format = (number) => {
-  const formatter = new Intl.NumberFormat('de-DE')
-  return formatter.format(number)
-}
 
 // Data
 let chargesSearch = ref('')
