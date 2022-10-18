@@ -1,7 +1,7 @@
 <route lang="json">
 {
   "meta": {
-    "title": "OWI"
+    "title": "OWIs in Essen"
   }
 }
 </route>
@@ -182,6 +182,18 @@ onMounted(async () => {
     <Map class="py-20 p-8 max-w-7xl mx-auto" :records="records" />
 
     <section class="py-16 px-4 bg-gray-300">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-xl font-bold mb-4">Ordnungs&shy;widrigkeiten nach Tag</h2>
+        <div class="grid sm:grid-cols-3 gap-y-10 gap-x-10">
+          <Calendar :data="meta.days" :month="7" :year="2022" class="w-full col-span-2 sm:col-span-1 h-auto shadow-xl" />
+          <div class="col-span-2 w-full h-auto shadow-xl bg-white">
+            <Weekdays :data="meta.days" :month="7" :year="2022" class="w-full h-auto bg-white" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 px-4">
       <div class="max-w-3xl mx-auto">
         <h2 class="font-bold text-xl mb-2">Datengrundlage</h2>
         <p class="text-lg mb-2">Die zugrundeliegenden Informationen wurden mithilfe der Plattform <a class="border-b-2 border-blue-500 hover:border-blue-200" href="https://fragdenstaat.de" target="_blank">fragdenstaat.de</a> auf Basis des Informations&shy;freiheits&shy;gesetzes <a href="https://fragdenstaat.de/anfrage/ordnungswidrigkeiten-juli-2022-2/" class="border-b-2 border-blue-500 hover:border-blue-200" target="_blank">beim Ordnungsamt der Stadt Essen angefragt</a>. Die Antwort erfolgte relativ zügig auf 61 beidseitig, dreispaltig, in kleiner Schrift bedruckten DIN A4 Seiten, die eingescannt und mittels OCR maschinenlesbar gemacht wurden.</p>
