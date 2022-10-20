@@ -133,9 +133,12 @@ onMounted(async () => {
 <template>
   <header class="min-h-[70vh] py-24 px-4 bg-gray-100 text-gray-800">
     <div class="max-w-3xl mx-auto h-full flex items-center">
-      <p class="text-2xl md:text-4xl leading-normal md:leading-normal">
-        Im <mark class="mark-yellow font-bold">{{ meta.title }}</mark> hat das Ordnungsamt der Stadt&nbsp;Essen <mark class="mark-yellow font-bold">{{ format(records.length) }}</mark>&nbsp;Verwarnungen im Verkehr ausgesprochen. Das sind rund <mark class="mark-yellow font-bold">{{ Math.ceil(records.length / 31) }}</mark>&nbsp;pro Tag. Wo und wofür könnt ihr auf dieser Seite herausfinden.
-      </p>
+      <div>
+        <p class="mb-1 text-2xl md:text-4xl leading-normal md:leading-normal">
+          Im <mark class="mark-yellow font-bold">{{ meta.title }}</mark> hat das Ordnungsamt der Stadt&nbsp;Essen <mark class="mark-yellow font-bold">{{ format(records.length) }}*</mark>&nbsp;Verwarnungen im Verkehr ausgesprochen. Wo und wofür könnt ihr auf dieser Seite herausfinden.
+        </p>
+        <small class="text-sm text-gray-500">Drittanzeigen via weg.li, Wegeheld, E-Mail o.ä. sind leider (noch) nicht in den Daten enthalten.</small>
+      </div>
     </div>
   </header>
 
